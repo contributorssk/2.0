@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口，确保在移动设备上正常显示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute的个人主页</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入谷歌字体 Noto Sans SC -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="./tupian/your-image.jpg" as="image">
+    <link rel="preload" href="./music/等你下课.mp3" as="audio">
+    
+    <!-- 添加网站图标 -->
+    <link rel="icon" href="./tupian/favicon.ico" type="image/x-icon">
+    
+    <!-- 添加 SEO 相关标签 -->
+    <meta name="description" content="Contribute的个人主页 - 独立开发者、谷歌开发者">
+    <meta name="keywords" content="Contribute, 开发者, Google DevFest, 物体检测">
+    <meta name="author" content="Contribute">
+</head>
+<body class="light-mode">
+    <!-- 导航栏 -->
+    <nav>
+        <!-- 导航链接 -->
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#about">关于作者</a>
+            <a href="#changelog">更新日志</a>
+            <a href="#achievements">我的成就</a>
+            <a href="#contact">联系方式</a>
+        </div>
+        <!-- 功能按钮组 -->
+        <div class="nav-buttons">
+            <!-- 音乐控制按钮 -->
+            <button id="music-toggle" aria-label="播放音乐">
+                <i class="fas fa-music" aria-hidden="true"></i>
+            </button>
+            <!-- 雪花效果开关按钮 -->
+            <button id="snow-toggle" onclick="toggleSnow()">
+                <i class="fas fa-snowflake"></i>
+            </button>
+            <!-- 深色模式切换按钮 -->
+            <button id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主页区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>欢迎来到Contribute的个人主页</h1>
+            <p>这是contribute的个人主页</p>
+            <!-- 北京时间显示区域 -->
+            <div id="beijing-time" class="time-display">
+                <i class="far fa-clock"></i>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于作者区域 -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>关于我</h2>
+            <!-- 添加个性标签区域 -->
+            <div class="personal-tags">
+                <span class="tag">00后</span>
+                <span class="tag">独立开发者</span>
+                <span class="tag">谷歌开发者</span>
+            </div>
+            <div class="about-text">
+                <p>我是contribute</p>
+                <!-- 个人特点列表 -->
+                <ul>
+                    <li>一名数码爱好者</li>
+                    <li>白日梦想家</li>
+                    <li>thenight赞助商</li>
+                </ul>
+                <!-- 技能列表 -->
+                <p>我热爱计算机相关的一切：</p>
+                <ul>
+                    <li>前端开发</li>
+                    <li>树莓派编程</li>
+                    <li>python爬虫</li>
+                    <li>pygame游戏建模</li>
+                </ul>
+                <!-- 兴趣爱好 -->
+                <p>最喜欢的哔哩哔哩的主播：</p>
+                <ul>
+                    <li>影视飓风</li>
+                    <li>老师好我叫何同学</li>
+                    <li>极客湾Geekerwan</li>
+                </ul>
+                <!-- 个性签名 -->
+                <p class="quote">"带着相机和好心情与世界的人环游世界"</p>
+                <p class="ending">请多指教！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更新日志区域 -->
+    <section id="changelog" class="changelog">
+        <div class="changelog-content">
+            <h2>小站大事记</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024年12月26日</div>
+                    <div class="timeline-content">
+                        <h3>网站 1.0 版本上线 🎉</h3>
+                        <p>- 完成基础页面设计</p>
+                        <p>- 添加深色模式切换</p>
+                        <p>- 实现雪花特效功能</p>
+                        <p>- 添加北京时间显示</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024年12月25日</div>
+                    <div class="timeline-content">
+                        <h3>网站创建 🎯</h3>
+                        <p>- 注册网站域名</p>
+                        <p>- 开始网站开发规划</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成就区域 -->
+    <section id="achievements" class="achievements">
+        <div class="achievements-content">
+            <h2>我的成就</h2>
+            <div class="achievement-grid">
+                <div class="achievement-card" role="article">
+                    <a href="https://verdant-sprinkles-2a03b6.netlify.app/" target="_blank">
+                        <img src="./tupian/google.jpg" alt="Google DevFest" class="achievement-img">
+                        <div class="achievement-info">
+                            <h3>2024 Google Shanghai DevFest 成员</h3>
+                            <p>参与 Google 开发者技术社区活动</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="achievement-card" role="article">
+                    <a href="https://verdant-sprinkles-2a03b6.netlify.app/" target="_blank">
+                        <img src="./tupian/wuti.jpg" alt="实时物体检测" class="achievement-img">
+                        <div class="achievement-info">
+                            <h3>实时物体检测开发工程师</h3>
+                            <p>开发实时物体检测系统</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式区域 -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>联系方式</h2>
+            <!-- 邮箱列表 -->
+            <div class="email-list">
+                <p><i class="fas fa-envelope"></i> 1516603851@qq.com</p>
+                <p><i class="fas fa-envelope"></i> nbbb5463@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 引入JavaScript文件 -->
+    <script src="script.js"></script>
+    <script src="snow.js"></script>
+
+    <!-- 在 body 标签底部添加音频元素 -->
+    <audio id="background-music" preload="auto" loop>
+        <source src="./music/等你下课.mp3" type="audio/mpeg">
+        <source src="./music/等你下课.mp3" type="audio/mp3">
+        您的浏览器不支持音频元素。
+    </audio>
+</body>
+</html>
